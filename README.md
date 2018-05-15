@@ -45,3 +45,38 @@ $ docker run -p 4000:80 username/repository:tag
 
 
 ## Part 3: Services
+
+### Run your new load-balanced app
+
+```
+# init
+$ docker swarm init
+
+# stack deploy
+$ docker stack deploy -c docker-compose.yml getstartedlab
+
+# service ls
+$ docker service ls
+
+# service ps
+$ docker service ps getstartedlab_web
+```
+
+
+### Scale the app
+
+Change the `replicas` value in `docker-compose.yml`, and re-runnnig the `docker stack deploy` command~:
+
+```
+$ docker stack deploy -c docker-compose.yml getstartedlab
+```
+
+### Take down the app and the swarm
+
+```
+# take the app down
+$ docker stack rm getstartedlab
+
+# take down the swarm
+$ docker swarm leave --force
+```
