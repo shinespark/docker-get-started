@@ -195,3 +195,12 @@ Remove Docker machines
 ```
 $ docker-machine rm <machine-name>
 ```
+
+
+## Part 5: Stacks
+
+```
+$ docker stack deploy -c docker-compose.yml getstartedlab
+```
+
+see: [Visualizer](http://localhost:8080/)
