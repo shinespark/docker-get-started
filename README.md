@@ -213,8 +213,21 @@ see: [Docker for AWS IAM permissions | Docker Documentation](https://docs.docker
 
 ## FAQ
 
-WARNING: The Docker Engine you're using is running in swarm mode.
+### WARNING: The Docker Engine you're using is running in swarm mode.
 
 ```
 $ docker swarm leave --force
 ```
+
+### Dockerfile をつくるベストプラクティス
+
+* `$ docker run -it IMAGE sh` で作業
+* 上手くいったら
+  * `Dockerfile` に追加
+  * `$ exit`
+  * `$ docker ps -aq | head -n 1 | pbcopy` で直近コンテナID取得
+  * `$ docker commit <CONTAINER ID> repository:tag`
+  * `$ docker run -it 〜` で再開
+* 上手くいかなかったら
+  * `$ exit`
+  * `$ docker run -it 〜` で再開
