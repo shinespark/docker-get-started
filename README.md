@@ -209,3 +209,12 @@ see: [Visualizer](http://localhost:8080/)
 
 see: [Link Amazon Web Services to Docker Cloud | Docker Documentation](https://docs.docker.com/docker-cloud/cloud-swarm/link-aws-swarm/)
 see: [Docker for AWS IAM permissions | Docker Documentation](https://docs.docker.com/docker-for-aws/iam-permissions/)
+
+
+## FAQ
+
+WARNING: The Docker Engine you're using is running in swarm mode.
+
+```
+$ docker swarm leave --force
+```
